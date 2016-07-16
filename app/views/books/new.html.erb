@@ -1,0 +1,32 @@
+<h2>Book Donation Page</h2>
+<div>Welcome... <%= current_user.email %></div>
+<%=form_for :book, url: '/books' do |f| %>
+<p>
+  <%=f.label :title%><br>
+  <%=f.text_field :title%>
+</p>
+<p>
+  <%=f.label :author%><br>
+  <%= f.text_field :author %>
+</p>
+<p>
+  <%=f.label :standard%><br>
+  <%= f.select :standard, ['University', 'College', 'Highschool']%>
+</p>
+<p>
+  <%=f.label :subject%><br>
+    <%= f.select :subject, ['Language', 'Science', 'Engineering','Geography','Math','Education']%>
+</p>
+<p>
+  <%=f.label :language%><br>
+  <%= f.select :language, ['English', 'French', 'Amharic']%>
+</p>
+<p>
+  <%=f.label :message%><br>
+  <%= f.text_area :message %>
+</p>
+<p>
+  <%=f.submit("Save")%>
+</p>
+<% end %>
+<%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>

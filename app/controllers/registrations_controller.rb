@@ -21,6 +21,6 @@ class RegistrationsController < ApplicationController
         end
    end
   def profile_params
-    params.require(:profile).permit(:first_name, :last_name, :address, :suburb, :state, :post_code, :type)
+    params.require(:profile).permit(:first_name, :last_name, :address, :suburb, :state, :post_code, :register_as)
   end
 end

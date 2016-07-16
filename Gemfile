@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+#paperclip for image processing
+gem 'paperclip'
+#devise for authenticating_user
 gem "devise", "~> 3.4.1"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
