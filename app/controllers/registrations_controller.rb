@@ -1,9 +1,15 @@
 class RegistrationsController < ApplicationController
  before_filter :authenticate_user!
+ # new method which instanciate a new object when called
   def new
     @profile = Profile.new
   end
+########################################
+  def show
+    @profile = Profile.where(:user_id => params[:id])
+   end
 
+########################################
   def create
         @profile = Profile.new(profile_params)
         @profile.user_id = current_user.id
@@ -15,6 +21,6 @@ class RegistrationsController < ApplicationController
         end
    end
   def profile_params
-    params.require(:profile).permit(:first_name, :last_name, :address, :suburb, :state, :post_code)
+    params.require(:profile).permit(:first_name, :last_name, :address, :suburb, :state, :post_code, :type)
   end
 end

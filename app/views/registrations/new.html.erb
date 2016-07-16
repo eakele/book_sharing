@@ -1,4 +1,5 @@
 <h2>Register</h2>
+<div>Welcome... <%= current_user.email %></div>
 <%=form_for :profile, url: '/registrations' do |f| %>
 <p>
   <%=f.label :first_name%><br>
@@ -23,6 +24,10 @@
 <p>
   <%=f.label :post_code%><br>
   <%= f.text_field :post_code %>
+</p>
+<p>
+  <%=f.label :type%><br>
+  <%= f.select :type, ['Donner', 'Volunteer']%>
 </p>
 
 <p>

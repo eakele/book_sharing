@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   root :to =>'main#index'
   get '/registrations/new' => 'registrations#new'
   post '/registrations' => 'registrations#create'
+  # get '/user/:id/registrations/show/' => 'registrations#show'
 end
