@@ -1,5 +1,5 @@
 class ChangeColumnName < ActiveRecord::Migration
   def change
-    rename_column :profiles, :type, :register_as
+    rename_column :books, :profile_id, :user_id
   end
 end

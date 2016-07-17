@@ -1,5 +1,5 @@
 <h2>Book Donation Page</h2>
-<div>Welcome... <%= current_user.email %></div>
+<div>Welcome... <%= current_user.first_name+" "+current_user.last_name%></div>
 <%=form_for :book, url: '/books' do |f| %>
 <p>
   <%=f.label :title%><br>
@@ -31,7 +31,7 @@
 </p>
 
 <p>
-  <%=f.submit("Save") class: "btn btn-primary"%>
+  <%=f.submit("Save") %>
 </p>
 <% end %>
 <%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>

@@ -1,5 +1,5 @@
 <h2>Register</h2>
-<div>Welcome... <%= current_user.email %></div>
+<div>Welcome... <%= current_user.first_name %></div>
 <%=form_for :profile, url: '/registrations' do |f| %>
 <p>
   <%=f.label :first_name%><br>
