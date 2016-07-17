@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'bootstrap', '~> 4.0.0.alpha3'
 #paperclip for image processing
 gem 'paperclip'
 #devise for authenticating_user

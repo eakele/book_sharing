@@ -26,7 +26,12 @@
   <%= f.text_area :message %>
 </p>
 <p>
-  <%=f.submit("Save")%>
+     <b> Picture </b><br/>
+     <%= f.file_field :image %>
+</p>
+
+<p>
+  <%=f.submit("Save") class: "btn btn-primary"%>
 </p>
 <% end %>
 <%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>

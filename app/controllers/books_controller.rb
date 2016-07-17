@@ -5,11 +5,21 @@ class BooksController < ApplicationController
      @book = Book.new
    end
  ########################################
-   def show
-     @book = Book.where(:profile_id => params[:id])
+   def index
+    #  @books = Book.order('created_at')
+
+     @books = Book.where(:profile_id => current_user.id)
     end
 
  ########################################
+ def destroy
+   @book = Book.find(params[:id])
+   @book.destroy
+   flash[:success] = "The book was destroyed."
+   redirect_to root_path
+ end
+ ########################################
+
    def create
          @book = Book.new(book_params)
          @book.profile_id = current_user.id
@@ -21,6 +31,6 @@ class BooksController < ApplicationController
          end
     end
    def book_params
-     params.require(:book).permit(:title, :author, :standard, :subject, :language, :message)
+     params.require(:book).permit(:title, :author, :standard, :subject, :language, :message,:image)
    end
 end

@@ -1,0 +1,9 @@
+<div class="media">
+  <div class="img-rounded">
+    <%= link_to image_tag(book.image.url(:original), class: 'media-object'), book.image.url, target: '_blank' %>
+  </div>
+  <div class="media-body">
+    <h4 class="media-heading"><%= book.title %></h4></br>
+   <a href="/books/destroy/<%=book.id%>" data-confirm="Are you sure?" data-method="delete">Delete</a>
+  </div>
+</div>
