@@ -6,9 +6,7 @@ class BooksController < ApplicationController
    end
  ########################################
    def index
-    #  @books = Book.order('created_at')
-
-     @books = Book.where(:profile_id => current_user.id)
+     @books = Book.where(:user_id => current_user.id)
     end
 
  ########################################
