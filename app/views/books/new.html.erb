@@ -1,37 +1,68 @@
-<h2>Book Donation Page</h2>
-<div>Welcome... <%= current_user.first_name+" "+current_user.last_name%></div>
-<%=form_for :book, url: '/books' do |f| %>
-<p>
-  <%=f.label :title%><br>
-  <%=f.text_field :title%>
-</p>
-<p>
-  <%=f.label :author%><br>
-  <%= f.text_field :author %>
-</p>
-<p>
-  <%=f.label :standard%><br>
-  <%= f.select :standard, ['University', 'College', 'Highschool']%>
-</p>
-<p>
-  <%=f.label :subject%><br>
-    <%= f.select :subject, ['Language', 'Science', 'Engineering','Geography','Math','Education']%>
-</p>
-<p>
-  <%=f.label :language%><br>
-  <%= f.select :language, ['English', 'French', 'Amharic']%>
-</p>
-<p>
-  <%=f.label :message%><br>
-  <%= f.text_area :message %>
-</p>
-<p>
-     <b> Picture </b><br/>
-     <%= f.file_field :image %>
-</p>
+<div class="page-header"><h1>Book Donation Page</h1><h4>Welcome... <%= current_user.first_name+" "+current_user.last_name%></h4>
+</div>
 
-<p>
-  <%=f.submit("Save") %>
-</p>
+<%=form_for :book, url: '/books',html: {class: 'form-horizontal'} do |f| %>
+<% if @book.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@book.errors.count, "error") %> prohibited this book from being saved:</h2>
+      <ul>
+      <% @book.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="field form-group">
+   <%=f.label :title,class: 'col-sm-2 control-label' %>
+   <div class="col-sm-10">
+   <%=f.text_field :title, class: "form-control"%>
+</div>
+</div>
+
+<div class="field form-group">
+  <%=f.label :author,class: "col-sm-2 control-label" %>
+  <div class="col-sm-10">
+  <%= f.text_field :author, class: "form-control" %>
+</div>
+</div>
+
+<div class="field form-group">
+  <%=f.label :standard,class: "col-sm-2 control-label" %>
+  <div class=" form group col-sm-10">
+      <%= f.select :standard, ['University', 'College', 'Highschool'],{:include_blank =>"---Please Select Standard---"},{class: "form-control"}%>
+</div>
+</div>
+
+<div class="field form-group">
+  <%=f.label :subject,class: "col-sm-2 control-label" %>
+  <div class="col-sm-10">
+    <%= f.select :subject, ['Language', 'Science', 'Engineering','Geography','Math','Education'],{:include_blank =>"---Please Select Subject---"},{class: "form-control"}%>
+</div>
+</div>
+
+<div class="field form-group">
+  <%=f.label :language,class: "col-sm-2 control-label" %>
+  <div class="col-sm-10">
+  <%= f.select :language, ['English', 'French', 'Amharic'],{:include_blank =>"---Please Select Language---"},{class: "form-control"}%>
+</div>
+</div>
+
+<div class="field form-group">
+  <%=f.label :message,class: "col-sm-2 control-label" %>
+  <div class="col-sm-10">
+  <%= f.text_area :message, class: "form-control" %>
+</div>
+</div>
+
+<div class="field form-group">
+  <%=f.label :image,class: "col-sm-2 control-label" %>
+     <div class="col-sm-10">
+     <%= f.file_field :image, class: "form-control" %>
+</div>
+</div>
+<div class="actions form-group">
+<div class="col-sm-offset-2 col-sm-10">
+  <%=f.submit "Save",class: "btn btn-default btn-primary" %>
+</div>
+</div>
 <% end %>
-<%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>

@@ -20,12 +20,13 @@ class BooksController < ApplicationController
 
    def create
          @book = Book.new(book_params)
-         @book.profile_id = current_user.id
-         if @book.save
-           flash[:notice] = "Profile successfully created"
+         @book.user_id = current_user.id
+        if @book.save
+            flash[:success] = 'Book was successfully added.'
            redirect_to '/'
          else
-           redirect_to '/login'
+           flash[:danger] = 'There was a problem creating the Book.'
+           render :new
          end
     end
    def book_params
