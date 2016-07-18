@@ -10,5 +10,6 @@ Rails.application.routes.draw do
   delete '/books/destroy/:id' => 'books#destroy'
 
   get  'static_pages/home'
-  # get '/user/:id/registrations/show/' => 'registrations#show'
+  get '/books/edit/:id' => 'books#edit'
+  patch '/books/update' => 'books#update'
 end
