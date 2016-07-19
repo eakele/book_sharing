@@ -1,5 +1,5 @@
 class Book < ActiveRecord::Base
-    belongs_to :profile
+    belongs_to :user
     validates :standard, :presence => true
     validates :title, :presence => true
     validates :author, :presence => true

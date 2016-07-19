@@ -2,14 +2,14 @@ Rails.application.routes.draw do
   devise_for :users
 
   root :to =>'static_pages#home'
-  get '/registrations/new' => 'registrations#new'
-  post '/registrations' => 'registrations#create'
-  get 'books/new' => 'books#new'
-  post 'books' => 'books#create'
+  get '/volunteer/new' => 'volunteers#new'
+  post 'volunteer' => 'volunteers#create'
+  get 'book/new' => 'books#new'
+  post 'book' => 'books#create'
   get 'books/show' => 'books#index'
-  delete '/books/destroy/:id' => 'books#destroy'
+  delete '/book/destroy/:id' => 'books#destroy'
+  get  'static_page/home'
+  get '/book/edit/:id' => 'books#edit'
+  patch '/book/update' => 'books#update'
 
-  get  'static_pages/home'
-  get '/books/edit/:id' => 'books#edit'
-  patch '/books/update' => 'books#update'
 end

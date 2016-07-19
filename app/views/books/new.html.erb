@@ -1,60 +1,60 @@
 <div class="page-header"><h1>Book Donation Page</h1><h4>Welcome... <%= current_user.first_name+" "+current_user.last_name%></h4>
 </div>
 
-<%=form_for :book, url: '/books',html: {class: 'form-horizontal'} do |f| %>
+<%=form_for :book, url: '/book',html: {class: 'form-horizontal'} do |f| %>
 <%= render 'shared/errors', object: @book %>
 
 <div class="field form-group">
-   <%=f.label :title,class: 'col-sm-2 control-label' %>
-   <div class="col-sm-4">
-   <%=f.text_field :title, class: "form-control"%>
+     <%=f.label :title,class: 'col-sm-2 control-label' %>
+     <div class="col-sm-4">
+     <%=f.text_field :title, class: "form-control"%>
+     </div>
+</div>
+
+<div class="field form-group">
+    <%=f.label :author,class: "col-sm-2 control-label" %>
+    <div class="col-sm-4">
+    <%= f.text_field :author, class: "form-control" %>
+    </div>
+</div>
+
+<div class="field form-group">
+    <%=f.label :standard,class: "col-sm-2 control-label" %>
+    <div class=" form group col-sm-4">
+        <%= f.select :standard, ['University', 'College', 'Highschool'],{:include_blank =>"---Please Select Standard---"},{class: "form-control"}%>
+    </div>
+</div>
+
+<div class="field form-group">
+    <%=f.label :subject,class: "col-sm-2 control-label" %>
+    <div class="col-sm-4">
+      <%= f.select :subject, ['Language', 'Science', 'Engineering','Geography','Math','Education'],{:include_blank =>"---Please Select Subject---"},{class: "form-control"}%>
+    </div>
+</div>
+
+<div class="field form-group">
+    <%=f.label :language,class: "col-sm-2 control-label" %>
+    <div class="col-sm-4">
+    <%= f.select :language, ['English', 'French', 'Amharic'],{:include_blank =>"---Please Select Language---"},{class: "form-control"}%>
+    </div>
+</div>
+
+<div class="field form-group">
+    <%=f.label :message,class: "col-sm-2 control-label" %>
+    <div class="col-sm-4">
+    <%= f.text_area :message, class: "form-control" %>
 </div>
 </div>
 
 <div class="field form-group">
-  <%=f.label :author,class: "col-sm-2 control-label" %>
-  <div class="col-sm-4">
-  <%= f.text_field :author, class: "form-control" %>
-</div>
-</div>
-
-<div class="field form-group">
-  <%=f.label :standard,class: "col-sm-2 control-label" %>
-  <div class=" form group col-sm-4">
-      <%= f.select :standard, ['University', 'College', 'Highschool'],{:include_blank =>"---Please Select Standard---"},{class: "form-control"}%>
-</div>
-</div>
-
-<div class="field form-group">
-  <%=f.label :subject,class: "col-sm-2 control-label" %>
-  <div class="col-sm-4">
-    <%= f.select :subject, ['Language', 'Science', 'Engineering','Geography','Math','Education'],{:include_blank =>"---Please Select Subject---"},{class: "form-control"}%>
-</div>
-</div>
-
-<div class="field form-group">
-  <%=f.label :language,class: "col-sm-2 control-label" %>
-  <div class="col-sm-4">
-  <%= f.select :language, ['English', 'French', 'Amharic'],{:include_blank =>"---Please Select Language---"},{class: "form-control"}%>
-</div>
-</div>
-
-<div class="field form-group">
-  <%=f.label :message,class: "col-sm-2 control-label" %>
-  <div class="col-sm-4">
-  <%= f.text_area :message, class: "form-control" %>
-</div>
-</div>
-
-<div class="field form-group">
-  <%=f.label :image,class: "col-sm-2 control-label" %>
+    <%=f.label :image,class: "col-sm-2 control-label" %>
      <div class="col-sm-4">
      <%= f.file_field :image, class: "form-control" %>
 </div>
 </div>
 <div class="actions form-group">
-<div class="col-sm-offset-2 col-sm-4">
-  <%=f.submit "Save",class: "btn btn-default btn-primary" %>
-</div>
+  <div class="col-sm-offset-2 col-sm-4">
+    <%=f.submit "Save",class: "btn btn-default btn-primary" %>
+  </div>
 </div>
 <% end %>

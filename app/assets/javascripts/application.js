@@ -14,3 +14,11 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+//= require moment
+//= require bootstrap-datetimepicker
+
+
+// $('#selectDate').datepicker()
+// .on('changeDate', function(ev){
+//     $('#selectDate').datepicker('hide');
+// });

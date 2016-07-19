@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160718052119) do
+ActiveRecord::Schema.define(version: 20160719065539) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -77,5 +77,18 @@ ActiveRecord::Schema.define(version: 20160718052119) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
-  add_foreign_key "profiles", "users", on_delete: :cascade
+  create_table "volunteers", force: :cascade do |t|
+    t.string   "departure_date"
+    t.string   "arrival_date"
+    t.string   "destination_country"
+    t.string   "destination_city"
+    t.string   "destination_province"
+    t.string   "message"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.integer  "user_id"
+  end
+
+  add_foreign_key "books", "users", on_delete: :cascade
+  add_foreign_key "volunteers", "users", on_delete: :cascade
 end
