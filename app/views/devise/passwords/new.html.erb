@@ -3,16 +3,15 @@
   <%= devise_error_messages! %>
 
   <div class="field form-group">
-    <%= f.label :email ,class:'col-sm-2 control-label'%>
+    <%= f.label :email ,class:'col-sm-4 control-label'%>
      <div class="col-sm-4">
     <%= f.email_field :email, autofocus: true , class: "form-control"%>
   </div>
 </div>
 <div class="actions form-group">
-  <div class="col-sm-offset-2 col-sm-4">
+  <div class="col-sm-offset-4 col-sm-4">
     <%= f.submit "Send me reset password instructions",class: "btn btn-default btn-primary"  %>
   </div>
   </div>
 <% end %>
-
 <%= render "devise/shared/links" %>

@@ -1,12 +1,16 @@
 <div class="container">
     <div class="row">
-        <div class="col-lg-4">
-          <%@books.each do |book|%>
+          <%@books.each_slice(3) do |books|%>
+          <div class="col">
+          <% books.each do |book| %>
+          <div class="col-md-4">
           <%= link_to image_tag(book.image.url, class: "img-responsive")%>
-           <div>Title: <%= book.title %> </div>
-          <div>Author: <%= book.author%></div>
+          Title: <%= book.title %></br>
+          Author: <%= book.author%></br>
           <a href="/chart/view/<%=book.id%>">Show details</a>
+          </div>
           <% end %>
         </div>
+        <%end%>
     </div>
 </div>

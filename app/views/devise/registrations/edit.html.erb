@@ -4,21 +4,21 @@
   <%= devise_error_messages! %>
 
   <div class="field form-group">
-    <%= f.label :email, class:'col-sm-2 control-label' %>
+    <%= f.label :email, class:'col-sm-4 control-label' %>
     <div class="col-sm-4">
     <%= f.email_field :email, autofocus: true, class: "form-control" %>
   </div>
 </div>
 
   <div class="field form-group">
-      <%= f.label :first_name , class:'col-sm-2 control-label'%>
+      <%= f.label :first_name , class:'col-sm-4 control-label'%>
       <div class="col-sm-4">
       <%= f.text_field :first_name , class: "form-control"%>
     </div>
   </div>
 
   <div class="field form-group">
-      <%= f.label :last_name , class:'col-sm-2 control-label'%>
+      <%= f.label :last_name , class:'col-sm-4 control-label'%>
       <div class="col-sm-4">
       <%= f.text_field :last_name , class: "form-control"%>
     </div>
@@ -29,27 +29,27 @@
   <% end %>
 
   <div class="field form-group">
-    <%= f.label :password , class:'col-sm-2 control-label'%> <i>(leave blank if you don't want to change it)</i>
+    <%= f.label :password , class:'col-sm-4 control-label'%> <i>(leave blank if you don't want to change it)</i>
     <div class="col-sm-4">
     <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
   </div>
 </div>
 
   <div class="field form-group">
-    <%= f.label :password_confirmation, class:'col-sm-2 control-label' %>
+    <%= f.label :password_confirmation, class:'col-sm-4 control-label' %>
     <div class="col-sm-4">
     <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
   </div>
 </div>
 
   <div class="field form-group">
-    <%= f.label :current_password, class:'col-sm-2 control-label' %> <i>(we need your current password to confirm your changes)</i>
+    <%= f.label :current_password, class:'col-sm-4 control-label' %> <i>(we need your current password to confirm your changes)</i>
     <div class="col-sm-4">
     <%= f.password_field :current_password, autocomplete: "off", class: "form-control" %>
   </div>
 </div>
 
-<div class="col-sm-offset-2 col-sm-4">
+<div class="col-sm-offset-4 col-sm-4">
   <div class="col-sm-4">
     <%= f.submit "Update" ,class: "btn btn-default btn-primary"%>
   </div>

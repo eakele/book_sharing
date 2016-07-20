@@ -1,5 +1,4 @@
 class BooksController < ApplicationController
-  before_filter :authenticate_user!
   # new method which instanciate a new object when called
    def new
         @book = Book.new
@@ -8,7 +7,7 @@ class BooksController < ApplicationController
   def index
       @books = Book.where(:user_id => current_user.id)
   end
-  
+
  ########################################
  def destroy
        @book = Book.find(params[:id])

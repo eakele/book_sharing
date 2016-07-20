@@ -1,5 +1,5 @@
 class CartController < ApplicationController
-
+  before_filter :authenticate_user!
   def index
     @books = Book.all
   end
@@ -13,7 +13,9 @@ class CartController < ApplicationController
 
   def create
    cart = Cart.new
+  #  volunteer = Volunteer.new
    cart.book_id = params[:book_id]
+  #  cart.volunteer_id = volunteer.where(volunteer_id: = current_user.id)
    cart.volunteer_id = current_user.id
     if cart.save
        flash[:success] = 'Book was successfully added to Cart'

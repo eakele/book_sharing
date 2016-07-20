@@ -1,7 +1,7 @@
 <div class="page-header"><h1>Volunteer Registration Page</h1><h4>Welcome... <%= current_user.first_name+" "+current_user.last_name%></h4>
 <%=form_for :volunteer, url: '/volunteer',html: {class: 'form-horizontal'} do |f| %>
 <%= render 'shared/errors', object: @volunteer %>
-<%=f.label :departure_date,class: 'col-sm-2 control-label'%>
+<%=f.label :departure_date,class: 'col-sm-4 control-label'%>
 <div class="container">
     <div class='col-md-5'>
         <div class="form-group">
@@ -14,7 +14,7 @@
         </div>
     </div>
     </div>
-    <%=f.label :arrival_date,class: 'col-sm-2 control-label'%>
+    <%=f.label :arrival_date,class: 'col-sm-4 control-label'%>
     <div class="container">
     <div class='col-md-5'>
         <div class="form-group">
@@ -42,31 +42,31 @@ $(function () {
 });
 </script>
 <div class="field form-group">
-      <%=f.label :destination_country,class: 'col-sm-2 control-label'%>
+      <%=f.label :destination_country,class: 'col-sm-4 control-label'%>
     <div class='col-md-5'>
       <%= f.text_field :destination_country , class: "form-control"%>
   </div>
 </div>
 <div class="field form-group">
-      <%=f.label :destination_city,class: 'col-sm-2 control-label'%>
+      <%=f.label :destination_city,class: 'col-sm-4 control-label'%>
     <div class='col-md-5'>
       <%= f.text_field :destination_city , class: "form-control"%>
   </div>
 </div>
 <div class="field form-group">
-      <%=f.label :destination_province,class: 'col-sm-2 control-label'%>
+      <%=f.label :destination_province,class: 'col-sm-4 control-label'%>
     <div class='col-md-5'>
       <%= f.text_field :destination_province , class: "form-control"%>
     </div>
 </div>
 <div class="field form-group">
-      <%=f.label :message,class: 'col-sm-2 control-label'%>
+      <%=f.label :message,class: 'col-sm-4 control-label'%>
     <div class='col-md-5'>
       <%= f.text_area :message , class: "form-control" %>
   </div>
 </div>
 <div class="actions form-group">
-  <div class="col-sm-offset-2 col-sm-4">
+  <div class="col-sm-offset-4 col-sm-4">
     <%=f.submit "Save",class: "btn btn-default btn-primary" %>
     </div>
 </div>
