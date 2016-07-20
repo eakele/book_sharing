@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-4">
+          <%= link_to image_tag(@book.image.url, class: "img-responsive")%>
+           <div>Title: <%= @book.title %> </div>
+          <div>Author: <%= @book.author%></div>
+            <div>standard: <%= @book.standard%></div>
+            <div>subject: <%= @book.subject%></div>
+            <div>language: <%= @book.language%></div>
+            <div>message: <%= @book.message%></div>
+
+            <%=form_for :cart,  method: :post, url: '/cart' do |f| %>
+              <%=f.text_field :book_id, :type => "hidden",:name => "book_id", :value => @book.id%>
+              <%=f.submit%>
+            <% end %>
+
+        </div>
+    </div>
+</div>

@@ -13,4 +13,5 @@ class Book < ActiveRecord::Base
                     convert_options: { thumb: "-quality 75 -strip",
                                        original: "-quality 85 -strip" }
     validates_attachment_presence :image
+    
 end
