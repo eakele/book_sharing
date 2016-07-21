@@ -1,4 +1,6 @@
 source 'https://rubygems.org'
+gem 'rails_12factor', group: :production
+
 gem 'momentjs-rails', '>= 2.9.0'
 gem 'bootstrap3-datetimepicker-rails', '~> 4.17.37'
 
@@ -49,4 +51,5 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  ruby "2.2.4"
 end
