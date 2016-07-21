@@ -20,7 +20,6 @@ Rails.application.routes.draw do
 
   get 'cart/new' => 'cart#new'
   post 'cart' => 'cart#create'
-
   get 'institution/new' => 'institutions#new'
   post 'institution' => 'institutions#create'
 

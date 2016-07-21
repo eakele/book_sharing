@@ -1,11 +1,11 @@
 <div class="container">
     <div class="row">
-      <div class="col-md-4">
-          <%= link_to image_tag(book.image.url, class: "img-responsive")%>
-           <div>Title: <%= book.title %> </div>
-          <div>Author: <%= book.author%></div>
-          <a href="/book/edit/<%=book.id%>">Edit</a>
-          <a href="/book/destroy/<%=book.id%>" data-confirm="Are you sure?" data-method="delete" class: 'btn btn-danger'>Delete</a>
-        </div>
-    </div>
+           <div class="col-md-4">
+                <%= link_to image_tag(book.image.url, class: "img-responsive")%>
+                Title: <%= book.title %></br>
+                Author: <%= book.author%></br>
+                <a href="/book/edit/<%=book.id%>">Edit</a>
+                <a href="/book/destroy/<%=book.id%>" data-confirm="Are you sure?" data-method="delete" class: 'btn btn-danger'>Delete</a>
+          </div>
+  </div>
 </div>
