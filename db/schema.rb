@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160720092606) do
+ActiveRecord::Schema.define(version: 20160721023034) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,19 @@ ActiveRecord::Schema.define(version: 20160720092606) do
   end
 
   add_index "carts", ["book_id"], name: "index_carts_on_book_id", using: :btree
+
+  create_table "delivery_infos", force: :cascade do |t|
+    t.integer  "cart_id"
+    t.string   "delivered_to"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+  end
+
+  add_index "delivery_infos", ["cart_id"], name: "index_delivery_infos_on_cart_id", using: :btree
 
   create_table "donners", force: :cascade do |t|
     t.string   "first_name"
@@ -113,6 +126,7 @@ ActiveRecord::Schema.define(version: 20160720092606) do
   add_foreign_key "books", "users", on_delete: :cascade
   add_foreign_key "carts", "books"
   add_foreign_key "carts", "volunteers", on_delete: :cascade
+  add_foreign_key "delivery_infos", "carts"
   add_foreign_key "institutions", "carts"
   add_foreign_key "volunteers", "users", on_delete: :cascade
 end

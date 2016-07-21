@@ -7,49 +7,49 @@
 
 <div class="field form-group">
      <%=f.label :title,class: 'col-sm-4 control-label' %>
-     <div class="col-sm-4">
+     <div class="col-sm-5">
      <%=f.text_field :title, class: "form-control"%>
      </div>
 </div>
 
 <div class="field form-group">
     <%=f.label :author,class: "col-sm-4 control-label" %>
-    <div class="col-sm-4">
+    <div class="col-sm-5">
     <%= f.text_field :author, class: "form-control" %>
     </div>
 </div>
 
 <div class="field form-group">
     <%=f.label :standard,class: "col-sm-4 control-label" %>
-    <div class=" form group col-sm-4">
+    <div class=" form group col-sm-5">
         <%= f.select :standard, ['University', 'College', 'Highschool','Kindergarten'],{:include_blank =>"---Please Select Standard---"},{class: "form-control"}%>
     </div>
 </div>
 
 <div class="field form-group">
     <%=f.label :subject,class: "col-sm-4 control-label" %>
-    <div class="col-sm-4">
+    <div class="col-sm-5">
       <%= f.select :subject, ['Language', 'Science','IT','Computer Science', 'Engineering','Geography','Math','Education'],{:include_blank =>"---Please Select Subject---"},{class: "form-control"}%>
     </div>
 </div>
 
 <div class="field form-group">
     <%=f.label :language,class: "col-sm-4 control-label" %>
-    <div class="col-sm-4">
+    <div class="col-sm-5">
     <%= f.select :language, ['English', 'French', 'Amharic'],{:include_blank =>"---Please Select Language---"},{class: "form-control"}%>
     </div>
 </div>
 
 <div class="field form-group">
     <%=f.label :message,class: "col-sm-4 control-label" %>
-    <div class="col-sm-4">
+    <div class="col-sm-5">
     <%= f.text_area :message, class: "form-control" %>
 </div>
 </div>
 
 <div class="field form-group">
     <%=f.label :cover,class: "col-sm-4 control-label" %>
-     <div class="col-sm-4">
+     <div class="col-sm-5">
      <%= f.file_field :image, class: "form-control" %>
 </div>
 </div>

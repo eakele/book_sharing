@@ -23,4 +23,7 @@ Rails.application.routes.draw do
   get 'institution/new' => 'institutions#new'
   post 'institution' => 'institutions#create'
 
+  get 'delivery/new' => 'delivery_infos#new'
+  post 'delivery' => 'delivery_infos#create'
+
 end
