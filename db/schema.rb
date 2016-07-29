@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160726015842) do
+ActiveRecord::Schema.define(version: 20160729023510) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,7 +23,6 @@ ActiveRecord::Schema.define(version: 20160726015842) do
     t.string   "subject",            null: false
     t.string   "language",           null: false
     t.string   "message"
-    t.integer  "user_id"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
     t.string   "image_file_name"
@@ -31,6 +30,7 @@ ActiveRecord::Schema.define(version: 20160726015842) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.string   "status"
+    t.integer  "user_id"
   end
 
   create_table "carts", force: :cascade do |t|
@@ -54,17 +54,6 @@ ActiveRecord::Schema.define(version: 20160726015842) do
   end
 
   add_index "delivery_infos", ["cart_id"], name: "index_delivery_infos_on_cart_id", using: :btree
-
-  create_table "donners", force: :cascade do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "address"
-    t.string   "suburb"
-    t.string   "state"
-    t.integer  "post_code"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "institutions", force: :cascade do |t|
     t.integer  "cart_id"
@@ -111,7 +100,6 @@ ActiveRecord::Schema.define(version: 20160726015842) do
     t.integer  "user_id"
   end
 
-  add_foreign_key "books", "users", on_delete: :cascade
   add_foreign_key "carts", "books"
   add_foreign_key "carts", "volunteers", on_delete: :cascade
   add_foreign_key "delivery_infos", "carts"
